@@ -4,3 +4,5 @@ psycopg2-binary
 panel
 python-dotenv
 nbconvert
+matplotlib
+hvplot
