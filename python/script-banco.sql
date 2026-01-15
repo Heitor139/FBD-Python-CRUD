@@ -1,3 +1,4 @@
+
 DROP TABLE IF EXISTS 
 Ficha_Anamnese, Exame, Internacao, Leito, Materiais_Insumos, Medicamento, 
 Consulta, Alerta, Mensagens, Horarios_plantao, Medico, 
@@ -170,6 +171,7 @@ CREATE TABLE Ficha_Anamnese (
   FOREIGN KEY (cpf) REFERENCES Paciente(cpf)
 );
 
+
 INSERT INTO Usuario (nome, login, senha, permissoes) VALUES 
 ('Carol Alves', 'carolalves', 'carol123', 'Administradora'),
 ('Milena sousa', 'milenasousa', 'milena412', 'Enfermeira'),
@@ -207,6 +209,7 @@ INSERT INTO Usuario (nome, login, senha, permissoes) VALUES
 ('Lucas Nunes', 'lucasnunes', 'lucas159', 'Médico');
 
 INSERT INTO Departamento(nome_dep) VALUES
+('Cardiologia'),
 ('Pronto-Socorro'),
 ('UTI'),
 ('Enfermagem'),
@@ -260,4 +263,31 @@ INSERT INTO Leito (numero, tipo) VALUES
 (14, 'Psiquiátrico'),
 (15, 'Cirúrgico'),
 (16, 'Pediatria');
+
+INSERT INTO Paciente(cpf, nome, sexo, data_nascimento, rua, bairro, cidade, pais) VALUES
+('15919081325', 'Benjamin Heitor Ramos','M' ,'1968-07-08', 'Rua 715', 'Conjunto Ceará', 'Fortaleza', 'Brasil'),
+('72219489760', 'Felipe Guilherme Lopes','M' ,'1948-07-13', 'Rua Comerciante Assis Vieira', 'De Lourdes', 'Fortaleza', 'Brasil'),
+('95563215008', 'Helena Emilly Amanda Martins', 'F' ,'1994-02-19', 'Rua Bruno Ângelo de Figueiredo', 'Brejo Seco', 'Juazeiro do Norte', 'Brasil'),
+('76129904827', 'Sérgio Matheus Nascimento', 'M' ,'1945-10-09', 'Vila Paissandu', 'Jardim América', 'Fortaleza', 'Brasil'),
+('43727104295', 'Fernanda Marlene dos Santos','F' ,'1994-06-18', 'Rua Principal, s/n', 'Centro', 'Patos', 'Brasil'),
+('61235916065', 'Samuel Cláudio da Conceição','M' ,'1973-07-10', 'Rua Raimundo Simplício de Carvalho 512', 'Centro', 'Chorozinho', 'Brasil'),
+('31877804827', 'Caleb Marcelo Freitas','M' ,'1961-05-11', 'Praça Maciel de Brito', 'Bela Vista', 'Fortaleza','Brasil'),
+('88116107453', 'Renato Oliver Heitor Pires', 'M' ,'1977-09-23', 'Vila Bruno', 'Benfica', 'Fortaleza', 'Brasil'),
+('63685814508', 'Márcio Carlos Eduardo Bernardo Aparício', 'M' ,'2001-10-01', 'Rua Antônio Ferreira de Andrade', 'Jarí', 'Maracanaú', 'Brasil'),
+('02868676723', 'Sophie Jennifer Isabelly Fernandes', 'F' ,'2007-08-21', 'Rua Joaquim Alves de Oliveira', 'Leandro Bezerra de Meneses', 'Juazeiro do Norte', 'Brasil'),
+('12345678900', 'Ravi Andrade da Silva', 'M' ,'2020-08-21', 'Rua Joaquim Alves de Oliveira', 'Leandro Bezerra de Meneses', 'Juazeiro do Norte', 'Brasil'),
+('12345678922', 'Ianara Andrade da Silva','F' ,'1999-08-21', 'Rua Joaquim Alves de Oliveira', 'Leandro Bezerra de Meneses', 'Juazeiro do Norte', 'Brasil'),
+('12345678933', 'Arthur Andrade da Silva','M' ,'1989-08-21', 'Rua Joaquim Alves de Oliveira', 'Leandro Bezerra de Meneses', 'Juazeiro do Norte', 'Brasil');
+
+INSERT INTO Profissionais_enfermagem (coren, especialidade, turno, login, nome_dep) VALUES
+('ENF-SP14293', 'UTI Adulto', 'Diurno', 'martaribeiro', 'UTI'),
+('ENF-RJ62924', 'Geral', 'Noturno', 'marianacosta', 'Enfermagem'),
+('ENF-MG43740', 'Obstetrícia', 'Diurno', 'beatrizsilva', 'Obstetrícia'),
+('ENF-BA42576', 'Pediatria', 'Diurno', 'fernandalima', 'Pediatria'),
+('ENF-RS85617', 'Psiquiatria', 'Noturno', 'larissaoliveira', 'Psiquiatria'),
+('ENF-PE60798', 'Geral', 'Diurno', 'yuriaraujo', 'Enfermagem'),
+('ENF-PR07189', 'Geral', 'Noturno', 'vitoriapereira', 'Clínica Médica'),
+('ENF-CE28790', 'Centro Cirúrgico', 'Diurno', 'rafaelgomes', 'Centro Cirúrgico'),
+('ENF-RJ10872', 'UTI', 'Noturno', 'marianasouza', 'Enfermagem'),
+('ENF-MG28649', 'Obstetrícia', 'Noturno', 'thiagomendes', 'Obstetrícia');
 
